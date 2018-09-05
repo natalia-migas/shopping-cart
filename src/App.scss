@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Lato:400,700,900');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.btn-main {
+  color: #fff;
+  background: transparent;
+  padding: 15px 25px;
+  border: 2px solid #fff;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1px;
+  transition: all 0.3s linear;
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+  }
+  i {
+    margin-left: 15px;
+  }
+}
+
+.btn-custom {
+  background-color: #76b6ff;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: all 0.3s linear;
+  &:hover,
+  &:focus {
+    background-color: #439bff;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.spinner {
+  text-align: center;
+  padding: 50px 0;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 6px solid #76b6ff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #76b6ff transparent transparent transparent;
+  }
+  div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.colors {
+  .color {
+    height: 13px;
+    width: 13px;
+    margin-right: 6px;
+    border-radius: 50%;
+    -webkit-box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 3px 4px 4px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5);
+    list-style-type: none;
+    display: inline-block;
+    &.red {
+      background-color: #ff0000;
+    }
+    &.pink {
+      background-color: #ffa4b4;
+    }
+    &.black {
+      background-color: #000;
+    }
+    &.white {
+      background-color: #fff;
+    }
+    &.blue {
+      background-color: #4f7eff;
+    }
+    &.gray {
+      background-color: #a8a8a8;
+    }
+    &.beige {
+      background-color: #ff9a71;
+    }
+    &.brown {
+      background-color: #632e1a;
+    }
+  }
+}
+
+.navbar {
+  transition: all 0.3s linear;
+  .navbar-brand {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s linear;
+    &:hover,
+    &:focus {
+      color: #000;
+    }
+  }
+  &.scrolled {
+    background-color: #fff;
+    a {
+      color: #000;
+    }
+    .cart {
+      button,
+      p {
+        color: #000;
+      }
+    }
+  }
+}
+
+.cart {
+  button {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 40px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    position: relative;
+    &:hover,
+    &:focus {
+      color: #000;
+    }
+    .badge {
+      font-size: 13px;
+      position: absolute;
+      top: 10px;
+      right: 0;
+      border-radius: 50%;
+    }
+  }
+  p {
+    display: inline-block;
+    color: #fff;
+    font-weight: 700;
+    transition: all 0.3s linear;
+  }
+}
+
+.header {
+  background: url(../src/img/bg-shoes.jpg) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  max-height: 100vh;
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    max-height: 100vh;
+    color: #fff;
+  }
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+  }
+  h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    letter-spacing: 1px;
+  }
+}
+
+.products {
+  background-color: #fff0e7;
+  padding: 50px 0;
+  .card {
+    border: 0;
+    border-radius: 0;
+    .price {
+      margin-bottom: 8px;
+      color: #002f6d;
+      font-weight: 700;
+    }
+    .card-title {
+      font-size: 17px;
+    }
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .sizes {
+    li {
+      display: inline-block;
+      margin-right: 5px;
+      padding: 5px;
+      border: 1px solid #e6e6e6;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 8px 0;
+  font-size: 13px;
+  p {
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes|Lato:400,700,900");
+body {
+  font-family: 'Lato', sans-serif; }
+
+.btn-main {
+  color: #fff;
+  background: transparent;
+  padding: 15px 25px;
+  border: 2px solid #fff;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+  .btn-main:hover, .btn-main:focus {
+    background-color: #fff;
+    color: #333;
+    text-decoration: none; }
+  .btn-main i {
+    margin-left: 15px; }
+
+.btn-custom {
+  background-color: #76b6ff;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 10px;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+  .btn-custom:hover, .btn-custom:focus {
+    background-color: #439bff;
+    color: #fff;
+    text-decoration: none; }
+
+.spinner {
+  text-align: center;
+  padding: 50px 0; }
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px; }
+  .lds-ring div {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 6px solid #76b6ff;
+    border-radius: 50%;
+    -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #76b6ff transparent transparent transparent; }
+  .lds-ring div:nth-child(1) {
+    -webkit-animation-delay: -0.45s;
+    animation-delay: -0.45s; }
+  .lds-ring div:nth-child(2) {
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s; }
+  .lds-ring div:nth-child(3) {
+    -webkit-animation-delay: -0.15s;
+    animation-delay: -0.15s; }
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+.colors .color {
+  height: 13px;
+  width: 13px;
+  margin-right: 6px;
+  border-radius: 50%;
+  -webkit-box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 3px 4px 4px 0px rgba(50, 50, 50, 0.5);
+  box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5);
+  list-style-type: none;
+  display: inline-block; }
+  .colors .color.red {
+    background-color: #ff0000; }
+  .colors .color.pink {
+    background-color: #ffa4b4; }
+  .colors .color.black {
+    background-color: #000; }
+  .colors .color.white {
+    background-color: #fff; }
+  .colors .color.blue {
+    background-color: #4f7eff; }
+  .colors .color.gray {
+    background-color: #a8a8a8; }
+  .colors .color.beige {
+    background-color: #ff9a71; }
+  .colors .color.brown {
+    background-color: #632e1a; }
+
+.navbar {
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+  .navbar .navbar-brand {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear; }
+    .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+      color: #000; }
+  .navbar.scrolled {
+    background-color: #fff; }
+    .navbar.scrolled a {
+      color: #000; }
+    .navbar.scrolled .cart button,
+    .navbar.scrolled .cart p {
+      color: #000; }
+
+.cart button {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 40px;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  position: relative; }
+  .cart button:hover, .cart button:focus {
+    color: #000; }
+  .cart button .badge {
+    font-size: 13px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    border-radius: 50%; }
+
+.cart p {
+  display: inline-block;
+  color: #fff;
+  font-weight: 700;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+
+.header {
+  background: url(../src/img/bg-shoes.jpg) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  max-height: 100vh; }
+  .header .hero {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    min-height: 100vh;
+    max-height: 100vh;
+    color: #fff; }
+  .header h1 {
+    font-family: 'Great Vibes', cursive;
+    width: 100%;
+    text-align: center;
+    font-size: 80px; }
+  .header h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    letter-spacing: 1px; }
+
+.products {
+  background-color: #fff0e7;
+  padding: 50px 0; }
+  .products .card {
+    border: 0;
+    border-radius: 0; }
+    .products .card .price {
+      margin-bottom: 8px;
+      color: #002f6d;
+      font-weight: 700; }
+    .products .card .card-title {
+      font-size: 17px; }
+  .products ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 13px; }
+  .products .sizes li {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px;
+    border: 1px solid #e6e6e6; }
+
+.footer {
+  text-align: center;
+  padding: 8px 0;
+  font-size: 13px; }
+  .footer p {
+    margin-bottom: 5px; }
