@@ -9,7 +9,8 @@ import Pagination from './Pagination';
 class Products extends Component {
   state = {
     products: [],
-    pageOfItems: []
+    pageOfItems: [],
+    order: 'desc'
   };
 
   componentWillReceiveProps(nextProps) {
@@ -84,7 +85,7 @@ Products.propTypes = {
 };
 
 export default compose(
-  firestoreConnect([{ collection: 'products' }]),
+  firestoreConnect([{ collection: 'products', orderBy: ['price', 'desc'] }]),
   connect((state, props) => ({
     products: state.firestore.ordered.products
   }))
