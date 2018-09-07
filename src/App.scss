@@ -138,21 +138,31 @@ body {
     background-color: #fff;
     a {
       color: #000;
+      &:hover,
+      &:focus {
+        color: #383838;
+      }
     }
-    .cart {
-      button,
-      p {
+    .cart-icon {
+      p,
+      button {
         color: #000;
+      }
+      button {
+        &:hover,
+        &:focus {
+          color: #383838;
+        }
       }
     }
   }
 }
 
-.cart {
+.cart-icon {
   button {
     background: transparent;
     border: 0;
-    color: #fff;
+    color: #ffffff;
     font-size: 40px;
     outline: none;
     cursor: pointer;
@@ -161,6 +171,7 @@ body {
     &:hover,
     &:focus {
       color: #000;
+      outline: none;
     }
     .badge {
       font-size: 13px;
@@ -212,6 +223,7 @@ body {
   .card {
     border: 0;
     border-radius: 0;
+    margin: 20px 0;
     .price {
       margin-bottom: 8px;
       color: #002f6d;
@@ -233,6 +245,92 @@ body {
       margin-right: 5px;
       padding: 5px;
       border: 1px solid #e6e6e6;
+    }
+  }
+  .pagination-nav {
+    width: 100%;
+    .page-item {
+      &.active {
+        .page-link {
+          background-color: #ff4372;
+          border-color: #ff4372;
+        }
+      }
+    }
+    .page-link {
+      border-radius: 0 !important;
+      &:hover {
+        background-color: #ffdbe4;
+      }
+    }
+  }
+}
+
+.cart {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  transition: all 0.4s linear;
+  &.transparent {
+    opacity: 0;
+    z-index: -1;
+  }
+  .cart-inside {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 450px;
+    height: 100%;
+    padding: 30px 20px;
+    background-color: #fff;
+    transition: all 0.3s linear;
+    transition-delay: 0.05s;
+    &.active {
+      right: 0;
+    }
+    .close {
+      position: absolute;
+      top: 0px;
+      right: 15px;
+      font-size: 50px;
+      outline: none;
+    }
+    h2 {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 700;
+      margin: 0 0 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .items {
+      //padding: 0 0 20px;
+    }
+    ul {
+      margin: 0;
+      li {
+        line-height: 50px;
+      }
+    }
+    .total-amount {
+      border-top: 1px solid #ebebeb;
+      padding-top: 30px;
+      margin-top: 30px;
+      p {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .btn-custom {
+      border: 0;
+      &.disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
     }
   }
 }

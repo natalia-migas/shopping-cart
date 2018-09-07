@@ -4,15 +4,28 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 
+import Pagination from './Pagination';
+
 class Products extends Component {
+  state = {
+    products: [],
+    pageOfItems: []
+  };
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ products: nextProps.products });
+  }
+
+  onChangePage = pageOfItems => this.setState({ pageOfItems: pageOfItems });
+
   render() {
-    const { products } = this.props;
-    if (products) {
+    const { products } = this.state;
+    if (products.length > 1) {
       return (
         <div className="products-wrapper">
           <div className="container">
             <div className="row">
-              {products.map(product => (
+              {this.state.pageOfItems.map(product => (
                 <div key={product.id} className="col-md-4">
                   <div className="card">
                     <img
@@ -45,6 +58,7 @@ class Products extends Component {
                   </div>
                 </div>
               ))}
+              <Pagination items={products} onChangePage={this.onChangePage} />
             </div>
           </div>
         </div>

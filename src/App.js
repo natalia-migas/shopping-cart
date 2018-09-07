@@ -10,6 +10,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Products from './components/products/Products';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import Cart from './components/cart/Cart';
+import OptionsPanel from './components/layout/OptionsPanel';
 
 class App extends Component {
   render() {
@@ -29,8 +31,10 @@ class App extends Component {
               </div>
             </header>
             <section className="products" id="products">
+              <OptionsPanel />
               <Products />
             </section>
+            <Cart />
             <Footer />
           </div>
         </Router>
