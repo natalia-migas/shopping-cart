@@ -24,7 +24,7 @@ class App extends Component {
               <div className="container hero">
                 <h1>Welcome at our shoe store</h1>
                 <h2>Free Shipping!</h2>
-                <a href="/" className="btn-main">
+                <a href="#products" className="btn-main">
                   Products
                   <i className="fas fa-chevron-down" />
                 </a>

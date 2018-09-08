@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { connect } from 'react-redux';
-import { showCart } from '../../actions/cartActions';
+import { showCart, addItem } from '../../actions/cartActions';
+import CartItem from './CartItem';
+import TotalAmount from './TotalAmount';
 
 class Cart extends Component {
   showCart = () => {
@@ -10,7 +12,7 @@ class Cart extends Component {
   };
 
   render() {
-    const { isOpen } = this.props.cart;
+    const { isOpen, cartItems } = this.props.cart;
     return (
       <div className={`cart ${!isOpen ? 'transparent' : ''}`}>
         <div className={`cart-inside ${isOpen ? 'active' : ''}`}>
@@ -20,43 +22,22 @@ class Cart extends Component {
           </button>
           <Scrollbars style={{ height: '65%' }}>
             <div className="items">
-              <ul>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>lgvnlrgvjbnlrgkl</li>
-                <li>last</li>
-              </ul>
+              {cartItems.length === 0 ? (
+                <h3>
+                  Nothing was added yet <i className="far fa-frown" />
+                </h3>
+              ) : (
+                <ul>
+                  {cartItems.map(item => (
+                    <li>
+                      <CartItem item={item} />
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </Scrollbars>
-          <div className="total-amount">
-            <p>
-              <strong>Delivery</strong>
-              <span>Free</span>
-            </p>
-            <p>
-              <strong>Total</strong>
-              199.99 €
-            </p>
-            <div className="text-center">
-              <button type="button" className="btn-custom disabled" disabled>
-                Go to checkout
-              </button>
-            </div>
-          </div>
+          <TotalAmount />
         </div>
       </div>
     );
@@ -69,5 +50,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { showCart }
+  { showCart, addItem }
 )(Cart);

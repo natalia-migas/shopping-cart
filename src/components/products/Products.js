@@ -4,13 +4,14 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 
+import Product from './Product';
 import Pagination from './Pagination';
+import Spinner from '../layout/Spinner';
 
 class Products extends Component {
   state = {
     products: [],
-    pageOfItems: [],
-    order: 'desc'
+    pageOfItems: []
   };
 
   componentWillReceiveProps(nextProps) {
@@ -21,43 +22,13 @@ class Products extends Component {
 
   render() {
     const { products } = this.state;
-    if (products.length > 1) {
+    if (products.length > 0) {
       return (
         <div className="products-wrapper">
           <div className="container">
             <div className="row">
               {this.state.pageOfItems.map(product => (
-                <div key={product.id} className="col-md-4">
-                  <div className="card">
-                    <img
-                      className="card-img-top img-fluid"
-                      src={product.picture}
-                      alt={product.name}
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">{product.name}</h5>
-                      <p className="price">{product.price} €</p>
-                      <ul className="colors">
-                        <li>Colors:</li>
-                        {product.colors.map(color => (
-                          <li className={`color ${color}`}>
-                            <p className="sr-only">{color}</p>
-                          </li>
-                        ))}
-                      </ul>
-                      <ul className="sizes">
-                        {product.sizes.map(size => (
-                          <li>{size}</li>
-                        ))}
-                      </ul>
-                      <div className="text-center">
-                        <a href="#products" className="btn-custom">
-                          Add to cart
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <Product product={product} key={product.id} />
               ))}
               <Pagination items={products} onChangePage={this.onChangePage} />
             </div>
@@ -65,16 +36,7 @@ class Products extends Component {
         </div>
       );
     } else {
-      return (
-        <div className="spinner">
-          <div className="lds-ring">
-            <div />
-            <div />
-            <div />
-            <div />
-          </div>
-        </div>
-      );
+      return <Spinner />;
     }
   }
 }
@@ -85,7 +47,7 @@ Products.propTypes = {
 };
 
 export default compose(
-  firestoreConnect([{ collection: 'products', orderBy: ['price', 'desc'] }]),
+  firestoreConnect([{ collection: 'products' }]),
   connect((state, props) => ({
     products: state.firestore.ordered.products
   }))

@@ -10,11 +10,12 @@ class CartIcon extends Component {
   };
 
   render() {
+    const { cartItems } = this.props.cart;
     return (
       <div className="cart-icon ml-auto">
         <button type="button" onClick={this.showCart}>
           <i className="fas fa-shopping-cart" />
-          <span className="badge badge-primary">9</span>
+          <span className="badge badge-primary">{cartItems.length}</span>
           <span className="sr-only">products</span>
         </button>
         <p>29.99 €</p>
@@ -27,7 +28,11 @@ CartIcon.propTypes = {
   showCart: PropTypes.func.isRequired
 };
 
+const mapStateToProps = state => ({
+  cart: state.cart
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { showCart }
 )(CartIcon);

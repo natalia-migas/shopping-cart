@@ -30,7 +30,9 @@ body {
   margin-top: 10px;
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
-  transition: all 0.3s linear; }
+  transition: all 0.3s linear;
+  border: 0;
+  cursor: pointer; }
   .btn-custom:hover, .btn-custom:focus {
     background-color: #439bff;
     color: #fff;
@@ -265,7 +267,10 @@ body {
       top: 0px;
       right: 15px;
       font-size: 50px;
-      outline: none; }
+      outline: none;
+      -webkit-transition: all 0.2s linear;
+      -o-transition: all 0.2s linear;
+      transition: all 0.2s linear; }
     .cart .cart-inside h2 {
       text-align: center;
       font-size: 30px;
@@ -273,10 +278,48 @@ body {
       margin: 0 0 30px;
       padding-bottom: 30px;
       border-bottom: 1px solid #ebebeb; }
+    .cart .cart-inside h3 {
+      text-align: center;
+      font-size: 20px; }
+    .cart .cart-inside h4 {
+      font-size: 17px;
+      font-weight: 700; }
+    .cart .cart-inside p {
+      font-size: 14px;
+      margin-bottom: 10px; }
+    .cart .cart-inside .items .img-wrapper {
+      max-width: 60px;
+      float: left;
+      margin-right: 15px; }
     .cart .cart-inside ul {
-      margin: 0; }
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
       .cart .cart-inside ul li {
-        line-height: 50px; }
+        margin-bottom: 10px;
+        padding: 15px;
+        border: 1px solid #ebebeb;
+        position: relative; }
+        .cart .cart-inside ul li .close {
+          font-size: 30px;
+          color: #dd0000;
+          top: 8px; }
+          .cart .cart-inside ul li .close:hover, .cart .cart-inside ul li .close:focus {
+            color: #8d0000; }
+      .cart .cart-inside ul .quantity .btn {
+        padding: 0;
+        height: 25px;
+        width: 25px;
+        line-height: 0;
+        margin: 0 4px;
+        background-color: #439bff;
+        font-weight: 700;
+        color: #fff; }
+        .cart .cart-inside ul .quantity .btn:hover, .cart .cart-inside ul .quantity .btn:focus {
+          background-color: #002f6d; }
+      .cart .cart-inside ul .price {
+        font-weight: 700;
+        color: #002f6d; }
     .cart .cart-inside .total-amount {
       border-top: 1px solid #ebebeb;
       padding-top: 30px;
