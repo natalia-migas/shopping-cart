@@ -25,25 +25,25 @@ This is a simple ecommerce shopping cart application built in React, Redux and F
 
 For running this project on your local machine:
 
-[Node.js](https://nodejs.org/en/download/) is required.
+- [Node.js](https://nodejs.org/en/download/) is required.
 
-Clone repo from [master branch](https://github.com/natalia-migas/shopping-cart)
+- Clone repo from [master branch](https://github.com/natalia-migas/shopping-cart)
 
-Then execute the following command on your terminal in the project directory:
+- Then execute the following command on your terminal in the project directory:
 
 ```bash
 $ npm install
 ```
 
-Add your own firebase config to store.js
+- Add your own firebase config to store.js
 
-Next you can run the application on your localhost:
+- Next you can run the application on your localhost:
 
 ```bash
 $ npm start
 ```
 
-Build for production:
+- Build for production:
 
 ```bash
 $ npm run build
