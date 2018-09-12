@@ -27,7 +27,7 @@ For running this project on your local machine:
 
 [Node.js](https://nodejs.org/en/download/) is required.
 
-Clone repo from [master branch]https://github.com/natalia-migas/shopping-cart)
+Clone repo from [master branch](https://github.com/natalia-migas/shopping-cart)
 
 Then execute the following command on your terminal in the project directory:
 
