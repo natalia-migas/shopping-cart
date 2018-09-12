@@ -53,6 +53,6 @@ $ npm run build
 
 Natalia Migas http://webdevnatalia.com/
 
-##License
+## License
 
 This project is licensed under the MIT License
