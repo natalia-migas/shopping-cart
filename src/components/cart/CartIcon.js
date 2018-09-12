@@ -20,7 +20,7 @@ class CartIcon extends Component {
           </span>
           <span className="sr-only">products</span>
         </button>
-        <p>{totalPrice} €</p>
+        <p>{totalPrice.toFixed(2)} €</p>
       </div>
     );
   }
