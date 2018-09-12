@@ -13,7 +13,7 @@ class TotalAmount extends Component {
         </p>
         <p>
           <strong>Total</strong>
-          {totalPrice.toFixed(2)} €
+          {totalPrice} €
         </p>
         <div className="text-center">
           <button type="button" className="btn-custom disabled" disabled>

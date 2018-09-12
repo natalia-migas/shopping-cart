@@ -22,7 +22,7 @@ class App extends Component {
             <header className="header">
               <Navbar />
               <div className="container hero">
-                <h1>Welcome at our shoe store</h1>
+                <h1>Welcome to our shoe store</h1>
                 <h2>Free Shipping!</h2>
                 <Link
                   to="products"
