@@ -14,10 +14,11 @@ body {
   font-size: 20px;
   letter-spacing: 1px;
   transition: all 0.3s linear;
+  cursor: pointer;
   &:hover,
   &:focus {
     background-color: #fff;
-    color: #333;
+    color: #333 !important;
     text-decoration: none;
   }
   i {
@@ -131,17 +132,16 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: all 0.3s linear;
-    &:hover,
-    &:focus {
+    &:hover {
       color: #000;
     }
   }
   &.scrolled {
     background-color: #fff;
-    a {
+    a,
+    .navbar-brand {
       color: #000;
-      &:hover,
-      &:focus {
+      &:hover {
         color: #383838;
       }
     }
@@ -222,6 +222,103 @@ body {
 .products {
   background-color: #fff0e7;
   padding: 50px 0;
+  .options {
+    select {
+      border-radius: 0;
+      color: #6d6d6d;
+      border: 1px solid #ebebeb;
+      -webkit-appearance: none;
+      appearance: none;
+      position: relative;
+      background: #fff url(../src/img/down-arrow.png) no-repeat center right
+        10px;
+      background-size: 12px;
+      &:focus {
+        border-color: #b8b8b8;
+        box-shadow: none;
+        color: #333;
+      }
+    }
+    .colors-check {
+      .form-check-inline {
+        margin-right: 20px;
+        input[type='checkbox'] {
+          display: none;
+          &:checked + label span:after {
+            opacity: 1;
+          }
+        }
+      }
+      label {
+        display: block;
+        span {
+          height: 14px;
+          width: 14px;
+          border-radius: 50%;
+          position: relative;
+          display: inline-block;
+          -webkit-box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5);
+          -moz-box-shadow: 3px 4px 4px 0px rgba(50, 50, 50, 0.5);
+          box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5);
+          &:after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: -5px;
+            left: -5px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 2px solid #727272;
+            opacity: 0;
+            -webkit-box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5);
+            -moz-box-shadow: 3px 4px 4px 0px rgba(50, 50, 50, 0.5);
+            box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5);
+          }
+        }
+        &.black {
+          span {
+            background-color: #000;
+          }
+        }
+        &.white {
+          span {
+            background-color: #fff;
+          }
+        }
+        &.red {
+          span {
+            background-color: #ff0000;
+          }
+        }
+        &.pink {
+          span {
+            background-color: #ffa4b4;
+          }
+        }
+        &.brown {
+          span {
+            background-color: #632e1a;
+          }
+        }
+        &.blue {
+          span {
+            background-color: #4f7eff;
+          }
+        }
+        &.gray {
+          span {
+            background-color: #a8a8a8;
+          }
+        }
+        &.beige {
+          span {
+            background-color: #ff9a71;
+          }
+        }
+      }
+    }
+  }
   .card {
     border: 0;
     border-radius: 0;
@@ -285,7 +382,8 @@ body {
     position: absolute;
     top: 0;
     right: -100%;
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     height: 100%;
     padding: 30px 20px;
     background-color: #fff;
@@ -350,17 +448,19 @@ body {
       }
       .quantity {
         .btn {
-          padding: 0;
-          height: 25px;
+          padding: 0 0 3px;
           width: 25px;
-          line-height: 0;
+          height: auto;
           margin: 0 4px;
-          background-color: #439bff;
+          background-color: transparent;
           font-weight: 700;
-          color: #fff;
+          color: #439bff;
+          border-radius: 0;
+          border: 1px solid #439bff;
           &:hover,
           &:focus {
-            background-color: #002f6d;
+            background-color: #439bff;
+            color: #fff;
           }
         }
       }

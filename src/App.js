@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
+import { Link, Element } from 'react-scroll';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,16 +25,23 @@ class App extends Component {
               <div className="container hero">
                 <h1>Welcome at our shoe store</h1>
                 <h2>Free Shipping!</h2>
-                <a href="#products" className="btn-main">
+                <Link
+                  to="products"
+                  className="btn-main"
+                  smooth={true}
+                  offset={50}
+                  duration={800}
+                  onSetActive={this.handleSetActive}
+                >
                   Products
                   <i className="fas fa-chevron-down" />
-                </a>
+                </Link>
               </div>
             </header>
-            <section className="products" id="products">
+            <Element name="products" className="products" id="products">
               <OptionsPanel />
               <Products />
-            </section>
+            </Element>
             <Cart />
             <Footer />
           </div>

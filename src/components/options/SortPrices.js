@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { firebaseConnect } from 'react-redux-firebase';
 import { sortPrices } from '../../actions/productsActions';
 
 class SortPrices extends Component {
+  static propTypes = {
+    firebase: PropTypes.shape({
+      push: PropTypes.func.isRequired
+    })
+  };
   state = {
     value: 'select'
   };
   onChange = (sortType, e) => {
-    console.log(e.target.value);
-    this.setState({ value: e.target.value });
-    this.props.sortPrices(sortType);
+    this.props.firebase.push('products', { some: 'price' }).then(() => {
+      this.setState({ value: e.target.value });
+      this.props.sortPrices(sortType);
+    });
   };
   render() {
     return (
-      <div className="col-md-2 ml-auto">
+      <div className="col-md-2">
         <div className="form-group">
           <label htmlFor="sort">Sort by:</label>
           <select
@@ -31,7 +38,4 @@ class SortPrices extends Component {
   }
 }
 
-export default connect(
-  null,
-  { sortPrices }
-)(SortPrices);
+export default firebaseConnect(null, { sortPrices })(SortPrices);

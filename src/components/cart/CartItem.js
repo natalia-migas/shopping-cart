@@ -1,12 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteItem } from '../../actions/cartActions';
+import { deleteItem, addItem, decrement } from '../../actions/cartActions';
 
 class CartItem extends Component {
   onClick = id => {
     const { deleteItem } = this.props;
     deleteItem(id);
   };
+
+  increment = () => {
+    const { addItem } = this.props;
+    addItem(this.props.item);
+  };
+
+  decrement = id => {
+    const { item } = this.props;
+    if (item.qty > 1) {
+      const { decrement } = this.props;
+      decrement(this.props.item);
+    } else {
+      const { deleteItem } = this.props;
+      deleteItem(id);
+    }
+  };
+
   render() {
     const { item } = this.props;
     return (
@@ -17,8 +34,17 @@ class CartItem extends Component {
         <h4 className="name">{item.name}</h4>
         <div className="quantity">
           <p>
-            Quantity: <button className="btn subtract">-</button>1
-            <button className="btn add">+</button>
+            Quantity:{' '}
+            <button
+              className="btn subtract"
+              onClick={this.decrement.bind(this, item.id)}
+            >
+              -
+            </button>
+            {item.qty}
+            <button className="btn add" onClick={this.increment.bind(this)}>
+              +
+            </button>
           </p>
         </div>
         <small className="price">{item.price} €</small>
@@ -36,5 +62,5 @@ class CartItem extends Component {
 
 export default connect(
   null,
-  { deleteItem }
+  { deleteItem, addItem, decrement }
 )(CartItem);

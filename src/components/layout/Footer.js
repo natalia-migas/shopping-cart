@@ -5,9 +5,11 @@ class Footer extends Component {
     return (
       <footer className="footer">
         <p>
-          2018 Natalia Migas{' '}
-          <a href="http://webdevnatalia.com">webdevnatalia.com</a> &copy; All
-          rights reserved.
+          2018 &copy; Natalia Migas{' '}
+          <a href="http://webdevnatalia.com" target="_blank">
+            webdevnatalia.com
+          </a>
+          . All rights reserved.
         </p>
         <p>Product's photos come from zalando.pl</p>
       </footer>

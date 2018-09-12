@@ -1,8 +1,6 @@
 import { SORT_PRICES_ASC, SORT_PRICES_DESC } from '../actions/types';
 
-const initialState = {
-  products: []
-};
+const initialState = {};
 
 export default (state = initialState, action) => {
   switch (action.type) {

@@ -13,10 +13,11 @@ body {
   letter-spacing: 1px;
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
-  transition: all 0.3s linear; }
+  transition: all 0.3s linear;
+  cursor: pointer; }
   .btn-main:hover, .btn-main:focus {
     background-color: #fff;
-    color: #333;
+    color: #333 !important;
     text-decoration: none; }
   .btn-main i {
     margin-left: 15px; }
@@ -126,13 +127,15 @@ body {
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear; }
-    .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+    .navbar .navbar-brand:hover {
       color: #000; }
   .navbar.scrolled {
     background-color: #fff; }
-    .navbar.scrolled a {
+    .navbar.scrolled a,
+    .navbar.scrolled .navbar-brand {
       color: #000; }
-      .navbar.scrolled a:hover, .navbar.scrolled a:focus {
+      .navbar.scrolled a:hover,
+      .navbar.scrolled .navbar-brand:hover {
         color: #383838; }
     .navbar.scrolled .cart-icon p,
     .navbar.scrolled .cart-icon button {
@@ -202,6 +205,68 @@ body {
 .products {
   background-color: #fff0e7;
   padding: 50px 0; }
+  .products .options select {
+    border-radius: 0;
+    color: #6d6d6d;
+    border: 1px solid #ebebeb;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    background: #fff url(../src/img/down-arrow.png) no-repeat center right 10px;
+    background-size: 12px; }
+    .products .options select:focus {
+      border-color: #b8b8b8;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      color: #333; }
+  .products .options .colors-check .form-check-inline {
+    margin-right: 20px; }
+    .products .options .colors-check .form-check-inline input[type='checkbox'] {
+      display: none; }
+      .products .options .colors-check .form-check-inline input[type='checkbox']:checked + label span:after {
+        opacity: 1; }
+  .products .options .colors-check label {
+    display: block; }
+    .products .options .colors-check label span {
+      height: 14px;
+      width: 14px;
+      border-radius: 50%;
+      position: relative;
+      display: inline-block;
+      -webkit-box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5);
+      -moz-box-shadow: 3px 4px 4px 0px rgba(50, 50, 50, 0.5);
+      box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5); }
+      .products .options .colors-check label span:after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+        left: -5px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 2px solid #727272;
+        opacity: 0;
+        -webkit-box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5);
+        -moz-box-shadow: 3px 4px 4px 0px rgba(50, 50, 50, 0.5);
+        box-shadow: 3px 4px 3px 0px rgba(50, 50, 50, 0.5); }
+    .products .options .colors-check label.black span {
+      background-color: #000; }
+    .products .options .colors-check label.white span {
+      background-color: #fff; }
+    .products .options .colors-check label.red span {
+      background-color: #ff0000; }
+    .products .options .colors-check label.pink span {
+      background-color: #ffa4b4; }
+    .products .options .colors-check label.brown span {
+      background-color: #632e1a; }
+    .products .options .colors-check label.blue span {
+      background-color: #4f7eff; }
+    .products .options .colors-check label.gray span {
+      background-color: #a8a8a8; }
+    .products .options .colors-check label.beige span {
+      background-color: #ff9a71; }
   .products .card {
     border: 0;
     border-radius: 0;
@@ -250,7 +315,8 @@ body {
     position: absolute;
     top: 0;
     right: -100%;
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     height: 100%;
     padding: 30px 20px;
     background-color: #fff;
@@ -307,16 +373,18 @@ body {
           .cart .cart-inside ul li .close:hover, .cart .cart-inside ul li .close:focus {
             color: #8d0000; }
       .cart .cart-inside ul .quantity .btn {
-        padding: 0;
-        height: 25px;
+        padding: 0 0 3px;
         width: 25px;
-        line-height: 0;
+        height: auto;
         margin: 0 4px;
-        background-color: #439bff;
+        background-color: transparent;
         font-weight: 700;
-        color: #fff; }
+        color: #439bff;
+        border-radius: 0;
+        border: 1px solid #439bff; }
         .cart .cart-inside ul .quantity .btn:hover, .cart .cart-inside ul .quantity .btn:focus {
-          background-color: #002f6d; }
+          background-color: #439bff;
+          color: #fff; }
       .cart .cart-inside ul .price {
         font-weight: 700;
         color: #002f6d; }

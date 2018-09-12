@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { updatePrice } from '../../actions/cartActions';
 
 class TotalAmount extends Component {
   render() {
+    const { totalPrice } = this.props.cart;
     return (
       <div className="total-amount">
         <p>
@@ -10,7 +13,7 @@ class TotalAmount extends Component {
         </p>
         <p>
           <strong>Total</strong>
-          199.99 €
+          {totalPrice} €
         </p>
         <div className="text-center">
           <button type="button" className="btn-custom disabled" disabled>
@@ -22,4 +25,11 @@ class TotalAmount extends Component {
   }
 }
 
-export default TotalAmount;
+const mapStateToProps = state => ({
+  cart: state.cart
+});
+
+export default connect(
+  mapStateToProps,
+  { updatePrice }
+)(TotalAmount);

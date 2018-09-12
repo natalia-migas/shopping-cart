@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { animateScroll as scroll } from 'react-scroll';
 
 import CartIcon from '../cart/CartIcon';
 
@@ -17,14 +17,22 @@ class Navbar extends Component {
     });
   }
 
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   render() {
     const { isTop } = this.state;
     return (
       <nav className={`navbar fixed-top ${!isTop ? 'scrolled' : ''}`}>
         <div className="container">
-          <Link to="/" className="navbar-brand">
+          <button
+            type="button"
+            onClick={this.scrollToTop}
+            className="btn btn-link navbar-brand"
+          >
             Women's Shoes
-          </Link>
+          </button>
           <CartIcon />
         </div>
       </nav>

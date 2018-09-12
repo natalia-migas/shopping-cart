@@ -1,11 +1,15 @@
-import { createStore, combineReducers, compose } from 'redux';
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import firebase from 'firebase';
-import 'firebase/firestore/dist/index.cjs';
-import { reactReduxFirebase, firebaseReducer } from 'react-redux-firebase';
+import {
+  reactReduxFirebase,
+  firebaseReducer,
+  getFirebase
+} from 'react-redux-firebase';
 import { reduxFirestore, firestoreReducer } from 'redux-firestore';
 import cartReducer from './reducers/cartReducer';
 import productsReducer from './reducers/productsReducer';
 import firebaseConfig from './config/keys';
+import thunk from 'redux-thunk';
 
 const rrfConfig = {
   userProfile: 'users'
@@ -35,6 +39,7 @@ const store = createStoreWithFirebase(
   rootReducer,
   initialState,
   compose(
+    applyMiddleware(thunk.withExtraArgument(getFirebase)),
     reactReduxFirebase(firebase),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )

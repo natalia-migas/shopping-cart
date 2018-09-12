@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { showCart, addItem } from '../../actions/cartActions';
 import CartItem from './CartItem';
 import TotalAmount from './TotalAmount';
+import uuid from 'uuid';
 
 class Cart extends Component {
   showCart = () => {
@@ -29,7 +30,7 @@ class Cart extends Component {
               ) : (
                 <ul>
                   {cartItems.map(item => (
-                    <li>
+                    <li key={uuid()}>
                       <CartItem item={item} />
                     </li>
                   ))}
