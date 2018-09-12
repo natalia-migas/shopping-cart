@@ -2,17 +2,16 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import { Link, Element } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-import Products from './components/products/Products';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Cart from './components/cart/Cart';
-import OptionsPanel from './components/layout/OptionsPanel';
+import Dashboard from './components/layout/Dashboard';
 
 class App extends Component {
   render() {
@@ -38,10 +37,9 @@ class App extends Component {
                 </Link>
               </div>
             </header>
-            <Element name="products" className="products" id="products">
-              <OptionsPanel />
-              <Products />
-            </Element>
+            <section name="products" className="products" id="products">
+              <Dashboard />
+            </section>
             <Cart />
             <Footer />
           </div>

@@ -6,7 +6,11 @@ class Footer extends Component {
       <footer className="footer">
         <p>
           2018 &copy; Natalia Migas{' '}
-          <a href="http://webdevnatalia.com" target="_blank">
+          <a
+            href="http://webdevnatalia.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             webdevnatalia.com
           </a>
           . All rights reserved.

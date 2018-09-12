@@ -17,6 +17,7 @@
     "react-scripts": "1.1.5",
     "react-scroll": "^1.7.10",
     "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
     "redux-firestore": "^0.5.8",
     "redux-thunk": "^2.3.0",
     "uuid": "^3.3.2"

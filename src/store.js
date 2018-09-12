@@ -7,8 +7,9 @@ import {
 } from 'react-redux-firebase';
 import { reduxFirestore, firestoreReducer } from 'redux-firestore';
 import cartReducer from './reducers/cartReducer';
-import productsReducer from './reducers/productsReducer';
+import sortingReducer from './reducers/sortingReducer';
 import firebaseConfig from './config/keys';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 const rrfConfig = {
@@ -30,7 +31,7 @@ const rootReducer = combineReducers({
   firebase: firebaseReducer,
   firestore: firestoreReducer,
   cart: cartReducer,
-  productsReducer: productsReducer
+  sorting: sortingReducer
 });
 
 const initialState = {};
@@ -38,10 +39,9 @@ const initialState = {};
 const store = createStoreWithFirebase(
   rootReducer,
   initialState,
-  compose(
+  composeWithDevTools(
     applyMiddleware(thunk.withExtraArgument(getFirebase)),
-    reactReduxFirebase(firebase),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    reactReduxFirebase(firebase)
   )
 );
 

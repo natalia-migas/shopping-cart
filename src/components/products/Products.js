@@ -46,9 +46,16 @@ Products.propTypes = {
   products: PropTypes.array
 };
 
+const mapStateToProps = state => ({
+  products: state.firestore.ordered.products
+});
+
 export default compose(
-  firestoreConnect([{ collection: 'products' }]),
-  connect((state, props) => ({
-    products: state.firestore.ordered.products
-  }))
+  firestoreConnect(props => [
+    {
+      collection: 'products',
+      orderBy: props.sort
+    }
+  ]),
+  connect(mapStateToProps)
 )(Products);

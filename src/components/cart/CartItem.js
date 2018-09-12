@@ -47,7 +47,7 @@ class CartItem extends Component {
             </button>
           </p>
         </div>
-        <small className="price">{item.price} €</small>
+        <small className="price">{item.price * item.qty} €</small>
         <button
           type="button"
           className="close"
